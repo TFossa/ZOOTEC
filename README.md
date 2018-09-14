@@ -1,2 +1,2 @@
 # ZOOTEC
-tcc etec prof seno 2018
+The ZOOTEC's project is start in github
