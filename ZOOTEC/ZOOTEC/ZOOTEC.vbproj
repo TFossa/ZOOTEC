@@ -17,6 +17,21 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -77,18 +92,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectDB.vb" />
-    <Compile Include="frmCadastroCidade.Designer.vb">
-      <DependentUpon>frmCadastroCidade.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmCadastroCidade.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCadastroEstado.Designer.vb">
-      <DependentUpon>frmCadastroEstado.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmCadastroEstado.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmMenu.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -108,10 +111,22 @@
     <Compile Include="frmRecado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogradouro.Designer.vb">
-      <DependentUpon>frmLogradouro.vb</DependentUpon>
+    <Compile Include="Logradouro\frmCadastroCidade.Designer.vb">
+      <DependentUpon>frmCadastroCidade.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmLogradouro.vb">
+    <Compile Include="Logradouro\frmCadastroCidade.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logradouro\frmCadastroEstado.Designer.vb">
+      <DependentUpon>frmCadastroEstado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Logradouro\frmCadastroEstado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logradouro\frmCadastroLogradouro.Designer.vb">
+      <DependentUpon>frmCadastroLogradouro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Logradouro\frmCadastroLogradouro.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -130,14 +145,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Variaveis.vb" />
+    <Compile Include="ZOOTECDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZOOTECDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmCadastroCidade.resx">
-      <DependentUpon>frmCadastroCidade.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmCadastroEstado.resx">
-      <DependentUpon>frmCadastroEstado.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -147,8 +161,14 @@
     <EmbeddedResource Include="frmRecado.resx">
       <DependentUpon>frmRecado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogradouro.resx">
-      <DependentUpon>frmLogradouro.vb</DependentUpon>
+    <EmbeddedResource Include="Logradouro\frmCadastroCidade.resx">
+      <DependentUpon>frmCadastroCidade.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logradouro\frmCadastroEstado.resx">
+      <DependentUpon>frmCadastroEstado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logradouro\frmCadastroLogradouro.resx">
+      <DependentUpon>frmCadastroLogradouro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -168,6 +188,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="ZOOTECDataSet.xsc">
+      <DependentUpon>ZOOTECDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ZOOTECDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZOOTECDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZOOTECDataSet.xss">
+      <DependentUpon>ZOOTECDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\Character\Admin.png" />
@@ -181,6 +212,17 @@
     <Content Include="Images\Essencial\minimize.png" />
     <Content Include="Images\Login\back.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

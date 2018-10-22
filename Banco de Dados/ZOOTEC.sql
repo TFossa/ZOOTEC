@@ -19,16 +19,22 @@ CodigoEstado int foreign key
 references Estado(CodigoEstado)
 )
 
+
+
 create table Logradouro
 (
 CodigoLogradouro int not null primary key identity (1,1),
 CEP NVARCHAR (25),
-CodigoEstado int foreign key
-references Estado (CodigoEstado),
 CodigoCidade int foreign key
 references Cidade (CodigoCidade)
 )
-  
+
+create table Especies
+(
+CodigoEspecies int not null primary key identity (1,1),
+Descricao NVARCHAR (25)
+)
+
 select * from Estado 
 select * from Cidade 
 select * from Logradouro 
@@ -49,6 +55,8 @@ values ('Veterinário')
 Insert into Funcao(NomeFuncao)
 values ('Funcionário')
 
+Select * from Funcao
+
 create table Funcionario
 (
 CodigoFuncionario int not null primary key identity (1,1),
@@ -58,13 +66,23 @@ CPF NVARCHAR (25),
 Endereco NVARCHAR (50),
 Bairro NVARCHAR (50),
 CodigoFuncao int foreign key
-references Funcao (CodigoFuncao), 
-Salario DECIMAL (9,2),
-CEP NVARCHAR (15),
+references Funcao (CodigoFuncao),
+Salario NVARCHAR(50) ,
 CodigoLogradouro int foreign key
 references Logradouro(CodigoLogradouro), 
 Usuario NVARCHAR (50),
 Senha NVARCHAR (50),
+)
+
+select * from Funcao  
+
+create table Recado
+(
+CodigoRecado int not null primary key identity (1,1),
+CodigoFuncionario int foreign key
+references Funcionario (CodigoFuncionario),
+Mensagem NVARCHAR (250),
+Destinatario NVARCHAR (50)
 )
 
 create table EmailFuncionario
@@ -83,6 +101,9 @@ CodigoFuncionario int foreign key
 references Funcionario (CodigoFuncionario)
 ) 
 
+Select * from EmailFuncionario 
+Select * from TelefoneFuncionario 
+
   ----------------------Criando a  tabela Medicamento-------------------------      
     
  Create Table Medicamento
@@ -94,8 +115,7 @@ references Funcionario (CodigoFuncionario)
  EstoqueMaximo NVARCHAR(50),
  Categoria VARCHAR (50)
  )  
-  
- 
+
     ----------------------Criando a  tabela Alimento-------------------------        
  Create Table Alimento
  (
@@ -111,29 +131,15 @@ references Funcionario (CodigoFuncionario)
  ----------------------Criando a  tabela Animal-------------------------        
  Create Table Animal
  (
- CodigoAnimal int not null primary key identity (1,1),
- Apelido NVARCHAR (50),
- NumeroDeAnilha NVARCHAR (50),
- Descricao NVARCHAR (200),
- idade NVARCHAR (50),
- RelatorioClinico NVARCHAR (500),
- Classificacao NVARCHAR (50),
- Medicamentos int foreign key
- references Medicamento (CodigoMedicamento),
- Alimentos int foreign key
- references Alimento (CodigoAlimento)
- )  
- 
- -------------------Criando a tabela Recado(em construção)-----------------------------
-    create table Recado
-  (
-  CodigoRecado int not null primary key identity (1,1),
-  Tipo NVARCHAR (50),
-  CodigoFuncionario int foreign key
-  references Funcionario (CodigoFuncionario),
-  CodigoFuncao int foreign key
-  references Funcao (CodigoFuncao),
-  Data date,
-  Mensagem NVARCHAR (250),
-  Destinatario NVARCHAR (50)
-  )
+ CodigoCadastroAnimal int not null primary key identity (1,1),
+ NomeAnimal NVARCHAR (50),
+ DescricaoAnimal NVARCHAR (50),
+ DataDeNascimentoAnimal NVARCHAR (200),
+ PesoAnimal NVARCHAR (50),
+ AlturaAnimal NVARCHAR (500),
+ GeneroAnimal NVARCHAR (50),
+ PorteAnimal NVARCHAR (50),
+ CodigoEspecies int foreign key references Especies (CodigoEspecies)
+ ) 
+
+

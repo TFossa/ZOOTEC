@@ -1,30 +1,20 @@
+Imports System.Data.SqlClient
 Public Class frmLogin
+    Dim cnBanco As SqlConnection
 
-    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        pnlInicio.Visible = False
-        pnlLogin.Visible = True
+    Public Cargo As String = "Administrador"
+    Private Sub Login()
+        'Cargo = Select na funcao do usuario
     End Sub
-
-    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles Me.Load
-        pnlInicio.Visible = True
-        pnlLogin.Visible = False
-
-        If tmrFechar.GetLifetimeService = 1 Then
-            Me.Close()
+    Private Sub ckbMostrarSenha_CheckedChanged(sender As Object, e As EventArgs) Handles ckbMostrarSenha.CheckedChanged
+        If ckbMostrarSenha.Checked = True Then
+            txtSenha.PasswordChar = ""
+        Else
+            txtSenha.PasswordChar = "*"
         End If
     End Sub
 
     Private Sub btnEntrar_Click(sender As Object, e As EventArgs) Handles btnEntrar.Click
-        If txtUsuario.Text = "admin" And txtSenha.Text = "admin" Then
-            tmrFechar.Stop()
-        Else
-            lblErro.Text = "*Login ou senha incorreto"
-        End If
-    End Sub
 
-    Private Sub pcbVoltar_Click(sender As Object, e As EventArgs) Handles pcbVoltar.Click
-        pnlInicio.Visible = True
-        pnlLogin.Visible = False
     End Sub
-
 End Class

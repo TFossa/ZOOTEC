@@ -24,116 +24,106 @@ Partial Class frmRecado
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRecado))
         Me.pcbFechar = New System.Windows.Forms.PictureBox()
-        Me.pnlConteudo = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.cbbNivel = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.pnlFundo = New System.Windows.Forms.Panel()
         Me.btnEnviar = New System.Windows.Forms.Button()
+        Me.cbbDestinatario = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtMensagem = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.pnlConteudo = New System.Windows.Forms.Panel()
         CType(Me.pcbFechar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlFundo.SuspendLayout()
         Me.pnlConteudo.SuspendLayout()
         Me.SuspendLayout()
         '
         'pcbFechar
         '
         Me.pcbFechar.Image = CType(resources.GetObject("pcbFechar.Image"), System.Drawing.Image)
-        Me.pcbFechar.Location = New System.Drawing.Point(480, 3)
+        Me.pcbFechar.Location = New System.Drawing.Point(403, 3)
         Me.pcbFechar.Name = "pcbFechar"
         Me.pcbFechar.Size = New System.Drawing.Size(15, 15)
         Me.pcbFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pcbFechar.TabIndex = 0
         Me.pcbFechar.TabStop = False
         '
-        'pnlConteudo
+        'pnlFundo
         '
-        Me.pnlConteudo.Controls.Add(Me.btnEnviar)
-        Me.pnlConteudo.Controls.Add(Me.ComboBox2)
-        Me.pnlConteudo.Controls.Add(Me.Label3)
-        Me.pnlConteudo.Controls.Add(Me.Label2)
-        Me.pnlConteudo.Controls.Add(Me.cbbNivel)
-        Me.pnlConteudo.Controls.Add(Me.TextBox1)
-        Me.pnlConteudo.Controls.Add(Me.Label1)
-        Me.pnlConteudo.Controls.Add(Me.pcbFechar)
-        Me.pnlConteudo.Location = New System.Drawing.Point(1, 1)
-        Me.pnlConteudo.Name = "pnlConteudo"
-        Me.pnlConteudo.Size = New System.Drawing.Size(498, 198)
-        Me.pnlConteudo.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 8)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Mensagem"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(14, 25)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(253, 105)
-        Me.TextBox1.TabIndex = 2
-        '
-        'cbbNivel
-        '
-        Me.cbbNivel.FormattingEnabled = True
-        Me.cbbNivel.Items.AddRange(New Object() {"Mensagem", "Importante", "Urgente"})
-        Me.cbbNivel.Location = New System.Drawing.Point(285, 41)
-        Me.cbbNivel.Name = "cbbNivel"
-        Me.cbbNivel.Size = New System.Drawing.Size(121, 21)
-        Me.cbbNivel.TabIndex = 3
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(282, 25)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(28, 13)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Tipo"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(282, 82)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(63, 13)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Destinatário"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Funcionário", "Veterinário", "Administrador"})
-        Me.ComboBox2.Location = New System.Drawing.Point(285, 98)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox2.TabIndex = 6
+        Me.pnlFundo.Controls.Add(Me.pnlConteudo)
+        Me.pnlFundo.Controls.Add(Me.pcbFechar)
+        Me.pnlFundo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlFundo.Location = New System.Drawing.Point(0, 0)
+        Me.pnlFundo.Name = "pnlFundo"
+        Me.pnlFundo.Size = New System.Drawing.Size(421, 200)
+        Me.pnlFundo.TabIndex = 1
         '
         'btnEnviar
         '
-        Me.btnEnviar.Location = New System.Drawing.Point(209, 155)
+        Me.btnEnviar.Location = New System.Drawing.Point(293, 82)
         Me.btnEnviar.Name = "btnEnviar"
         Me.btnEnviar.Size = New System.Drawing.Size(75, 23)
         Me.btnEnviar.TabIndex = 7
         Me.btnEnviar.Text = "Enviar"
         Me.btnEnviar.UseVisualStyleBackColor = True
         '
+        'cbbDestinatario
+        '
+        Me.cbbDestinatario.FormattingEnabled = True
+        Me.cbbDestinatario.Items.AddRange(New Object() {"Funcionário", "Veterinário", "Administrador"})
+        Me.cbbDestinatario.Location = New System.Drawing.Point(268, 16)
+        Me.cbbDestinatario.Name = "cbbDestinatario"
+        Me.cbbDestinatario.Size = New System.Drawing.Size(121, 21)
+        Me.cbbDestinatario.TabIndex = 6
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(265, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(63, 13)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Destinatário"
+        '
+        'txtMensagem
+        '
+        Me.txtMensagem.Location = New System.Drawing.Point(6, 17)
+        Me.txtMensagem.Multiline = True
+        Me.txtMensagem.Name = "txtMensagem"
+        Me.txtMensagem.Size = New System.Drawing.Size(256, 103)
+        Me.txtMensagem.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(3, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(59, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Mensagem"
+        '
+        'pnlConteudo
+        '
+        Me.pnlConteudo.Controls.Add(Me.btnEnviar)
+        Me.pnlConteudo.Controls.Add(Me.cbbDestinatario)
+        Me.pnlConteudo.Controls.Add(Me.Label3)
+        Me.pnlConteudo.Controls.Add(Me.txtMensagem)
+        Me.pnlConteudo.Controls.Add(Me.Label1)
+        Me.pnlConteudo.Location = New System.Drawing.Point(3, 24)
+        Me.pnlConteudo.Name = "pnlConteudo"
+        Me.pnlConteudo.Size = New System.Drawing.Size(415, 164)
+        Me.pnlConteudo.TabIndex = 8
+        '
         'frmRecado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(500, 200)
-        Me.Controls.Add(Me.pnlConteudo)
+        Me.ClientSize = New System.Drawing.Size(421, 200)
+        Me.Controls.Add(Me.pnlFundo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmRecado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmRecado"
         CType(Me.pcbFechar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlFundo.ResumeLayout(False)
         Me.pnlConteudo.ResumeLayout(False)
         Me.pnlConteudo.PerformLayout()
         Me.ResumeLayout(False)
@@ -141,12 +131,11 @@ Partial Class frmRecado
     End Sub
 
     Friend WithEvents pcbFechar As PictureBox
-    Friend WithEvents pnlConteudo As Panel
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents pnlFundo As Panel
+    Friend WithEvents cbbDestinatario As ComboBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents cbbNivel As ComboBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtMensagem As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnEnviar As Button
+    Friend WithEvents pnlConteudo As Panel
 End Class

@@ -1,9 +1,10 @@
-﻿Imports System.DateTime
+﻿Imports System.Data.SqlClient
 Public Class frmRecado
-    Dim datahoraAtual As DateTime = Now
+    Dim cnBanco As SqlConnection
+
     Private Sub frmRecado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.BackColor = Color.Black
-        pnlConteudo.BackColor = VClaro
+        pnlFundo.BackColor = VClaro
     End Sub
 
     Private Sub pcbFechar_Click(sender As Object, e As EventArgs) Handles pcbFechar.Click
@@ -13,6 +14,5 @@ Public Class frmRecado
     Private Sub btnEnviar_Click(sender As Object, e As EventArgs) Handles btnEnviar.Click
         'Insert na tabela recado com agregação do nome e função do funcionário atual mais as informações atribuídas ao form
 
-        MessageBox.Show("o neto é gay")
     End Sub
 End Class

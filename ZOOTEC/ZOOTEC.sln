@@ -22,13 +22,4 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BCC89B79-9717-4DB7-9273-A3BA05E65BDB}
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://zootec2018.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = ZOOTEC\\ZOOTEC.vbproj
-		SccProjectName1 = ZOOTEC
-		SccLocalPath1 = ZOOTEC
-	EndGlobalSection
 EndGlobal
